@@ -1,14 +1,13 @@
 let user = process.argv.slice(2);
+Number(user);
 
-for(let i of user){
-if (i < 0){
-  console.log("Input only postive numbers");
-}
-else if  (typeof i === "string"){
-  console.log( "Input only postive numbers" );
-} else {
+for(let val of user){
+if (val >= 0){
   setTimeout(() => {
     process.stdout.write('The first alarm ring \x07');
-  }, i); 
+  }, (val*1000)); 
+}
+ else {
+  console.log("your input is invild only put in secs ")
 }
 }
